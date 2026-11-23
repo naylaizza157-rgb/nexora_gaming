@@ -1,0 +1,617 @@
+/* === Reset & Base Styles === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #020617; /* slate-950 */
+    color: #f1f5f9; /* slate-100 */
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* === Utility & Layout === */
+.container {
+    max-width: 80rem; /* 1280px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.text-center { text-align: center; }
+.mb-6 { margin-bottom: 1.5rem; }
+
+/* Warna Teks */
+.text-indigo { color: #818cf8; }
+.text-purple { color: #c084fc; }
+.text-amber { color: #fbbf24; }
+.text-emerald { color: #34d399; }
+.text-red { color: #f87171; }
+.text-cyan { color: #22d3ee; }
+
+/* === Buttons === */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #6366f1;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.btn-secondary:hover {
+    background-color: #334155;
+}
+
+.btn-emerald {
+    background-color: #059669;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-emerald:hover {
+    background-color: #10b981;
+}
+
+.btn-card {
+    display: block;
+    width: 100%;
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 0.625rem 0;
+    font-size: 0.75rem;
+    margin-top: 1rem;
+}
+
+.btn-card:hover {
+    background-color: #4f46e5;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding: 0.625rem 0;
+    font-size: 0.75rem;
+    margin-top: 1rem;
+}
+
+/* === Section 1: Navbar === */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1e293b;
+}
+
+.nav-container {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #4f46e5;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+.brand-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+}
+
+.brand-subtitle {
+    color: #818cf8;
+    font-size: 0.75rem;
+    display: block;
+    margin-top: -0.25rem;
+    font-weight: 400;
+}
+
+.nav-links {
+    display: none;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+.nav-links a {
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #818cf8;
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+}
+
+/* === Section 2: Hero Banner === */
+.hero {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.badge-pill {
+    background-color: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+    .hero-title { font-size: 3rem; }
+}
+
+@media (min-width: 768px) {
+    .hero-title { font-size: 3.75rem; }
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-desc {
+    color: #94a3b8;
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+    .hero-desc { font-size: 1rem; }
+}
+
+@media (min-width: 768px) {
+    .hero-desc { font-size: 1.125rem; }
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* === Section 3: Flash Deal === */
+.flash-deal {
+    padding: 2.5rem 0;
+    background: linear-gradient(to right, #1e1b4b, #0f172a);
+    border-top: 1px solid rgba(49, 46, 129, 0.5);
+    border-bottom: 1px solid rgba(49, 46, 129, 0.5);
+}
+
+.flash-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #a5b4fc;
+    margin-bottom: 0.5rem;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 700;
+    color: #facc15;
+    margin: 1rem 0 1.5rem;
+}
+
+.countdown span {
+    background-color: #1e293b;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.deal-card {
+    max-width: 20rem;
+    margin: 0 auto;
+    background-color: #0f172a;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #1e293b;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.discount-badge {
+    font-size: 10px;
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.deal-name {
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.old-price {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    text-decoration: line-through;
+    margin-top: 0.25rem;
+}
+
+.new-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #818cf8;
+}
+
+.new-price span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* === Section Headers === */
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+@media (min-width: 640px) {
+    .section-title { font-size: 1.875rem; }
+}
+
+.section-subtitle {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .section-subtitle { font-size: 0.875rem; }
+}
+
+/* === Section 4: Room Selection === */
+.rooms-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.rooms-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.rooms-grid::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .rooms-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: visible;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .section-header {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .rooms-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.room-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 82vw;
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s;
+}
+
+.room-card:hover {
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+@media (min-width: 640px) {
+    .room-card { width: 320px; }
+}
+
+@media (min-width: 768px) {
+    .room-card { width: auto; }
+}
+
+.room-card-featured {
+    position: relative;
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 10px 15px -3px rgba(30, 27, 75, 0.5);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+}
+
+.room-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.room-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+.room-desc {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.room-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #1e293b;
+}
+
+.price-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.price-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.price-value span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+/* === Section 5: Game Catalog === */
+.games-section {
+    padding: 4rem 0;
+    background-color: rgba(15, 23, 42, 0.6);
+    border-top: 1px solid #1e293b;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+    .games-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+.game-card {
+    background-color: rgba(30, 41, 59, 0.8);
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    text-align: center;
+}
+
+.game-title {
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.game-genre {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+/* === Section 6: Analytics === */
+.analytics-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.chart-box {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .chart-box { padding: 1.5rem; }
+}
+
+.chart-canvas {
+    width: 100%;
+    height: 10rem;
+    display: block;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+/* === Section 7: Footer === */
+.footer {
+    background-color: #0f172a;
+    border-top: 1px solid #1e293b;
+    padding: 2.5rem 0;
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .footer { font-size: 0.875rem; }
+}
+
+.footer-brand {
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.footer-address {
+    margin-bottom: 0.75rem;
+}
+
+.footer-address a {
+    color: #818cf8;
+}
+
+.footer-address a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    color: #64748b;
+}
